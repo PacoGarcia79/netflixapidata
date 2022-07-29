@@ -28,7 +28,6 @@ public class Title {
 	@NotBlank(message = "Year is mandatory")
 	@Min(1900)
 	@MaxCurrentYear
-	// private String release_year;
 	private String releaseYear;
 
 	@NotNull(message = "Number of reviews is mandatory")
@@ -52,19 +51,6 @@ public class Title {
 		super();
 	}
 
-//	public Title(String id, String name, String date_added, String releaseYear, String rating, String duration,
-//			String description, double user_rating) {
-//		super();
-//		this.id = id;
-//		this.name = name;
-//		this.date_added = date_added;
-//		this.releaseYear = releaseYear;
-//		this.rating = rating;
-//		this.duration = duration;
-//		this.description = description;
-//		this.user_rating = user_rating;
-//
-//	}
 	public Title(Long id, String name, String date_added, String releaseYear, String rating, String duration,
 			String description, double user_rating) {
 		super();
@@ -78,14 +64,6 @@ public class Title {
 		this.user_rating = user_rating;
 
 	}
-
-//	public String getId() {
-//		return id;
-//	}
-//
-//	public void setId(String id) {
-//		this.id = id;
-//	}
 	
 	public Long getId() {
 		return id;
