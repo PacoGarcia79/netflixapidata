@@ -12,5 +12,5 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "category", path = "category")
 public interface CategoryRepository extends PagingAndSortingRepository<Category, Long> {
 
-    List<Director> findByName(@Param("name") String name);
+    List<Director> findByNameContaining(@Param("name") String name);
 }

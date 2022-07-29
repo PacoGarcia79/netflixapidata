@@ -11,5 +11,5 @@ import com.netflix.apidata.entity.Actor;
 @RepositoryRestResource(collectionResourceRel = "actor", path = "actor")
 public interface ActorRepository extends PagingAndSortingRepository<Actor, Long>{
 
-	List<Actor> findByName(@Param("name") String name);
+	List<Actor> findByNameContaining(@Param("name") String name);
 }

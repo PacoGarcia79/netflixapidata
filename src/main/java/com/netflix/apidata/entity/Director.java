@@ -10,12 +10,11 @@ import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-public class Director{
+public class Director {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
 
 	@NotEmpty
 	private String name;
@@ -36,19 +35,15 @@ public class Director{
 		return id;
 	}
 
-
-
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
-
-	public String getName(){
+	public String getName() {
 		return name;
 	}
 
-	public void setName(String name){
-		this.name=name;
+	public void setName(String name) {
+		this.name = name;
 	}
 }

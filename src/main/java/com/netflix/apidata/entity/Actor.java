@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
+
 @Entity
 @Table(name = "actor")
 public class Actor {
@@ -15,6 +16,9 @@ public class Actor {
 
 	@NotEmpty
 	private String name;
+	
+	@ManyToMany
+	Set<Title> titleId;
 
 	public Actor() {
 		super();

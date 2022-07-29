@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -26,7 +27,8 @@ public class Title {
 	@NotBlank(message = "Year is mandatory")
 	@Min(1900)
 	@MaxCurrentYear
-	private String release_year;
+	// private String release_year;
+	private String releaseYear;
 
 	@NotNull(message = "Number of reviews is mandatory")
 	@Min(0)
@@ -36,40 +38,32 @@ public class Title {
 	private String description;
 	private double user_rating;
 
+	@ManyToMany
+	Set<Actor> actor;
 
+	@ManyToMany
+	Set<Director> director;
+
+	@ManyToMany
+	Set<Category> category;
 
 	public Title() {
 		super();
 	}
 
-	public Title(String id, String name, String date_added, String release_year, String rating, String duration,
-				 String description, double user_rating) {
+	public Title(String id, String name, String date_added, String releaseYear, String rating, String duration,
+			String description, double user_rating) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.date_added = date_added;
-		this.release_year = release_year;
+		this.releaseYear = releaseYear;
 		this.rating = rating;
 		this.duration = duration;
 		this.description = description;
 		this.user_rating = user_rating;
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	public String getId() {
 		return id;
@@ -95,12 +89,12 @@ public class Title {
 		this.date_added = date_added;
 	}
 
-	public String getRelease_year() {
-		return release_year;
+	public String getReleaseYear() {
+		return releaseYear;
 	}
 
-	public void setRelease_year(String release_year) {
-		this.release_year = release_year;
+	public void setReleaseYear(String releaseYear) {
+		this.releaseYear = releaseYear;
 	}
 
 	public String getRating() {
@@ -137,10 +131,9 @@ public class Title {
 
 	@Override
 	public String toString() {
-		return "Title [id=" + id + ", name=" + name + ", date_added=" + date_added + ", release_year=" + release_year
+		return "Title [id=" + id + ", name=" + name + ", date_added=" + date_added + ", release_year=" + releaseYear
 				+ ", rating=" + rating + ", duration=" + duration + ", description=" + description + ", user_rating="
-				+ user_rating
-				+ "]";
+				+ user_rating + "]";
 	}
-	
+
 }
