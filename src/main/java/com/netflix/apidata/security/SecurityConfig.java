@@ -1,4 +1,4 @@
-package com.netflix.api.security;
+package com.netflix.apidata.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

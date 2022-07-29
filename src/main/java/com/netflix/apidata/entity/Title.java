@@ -1,7 +1,5 @@
 package com.netflix.apidata.entity;
 
-import com.netflix.api.validation.MaxCurrentYear;
-
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -13,6 +11,8 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+
+import com.netflix.apidata.validation.MaxCurrentYear;
 
 @Entity
 public class Title {

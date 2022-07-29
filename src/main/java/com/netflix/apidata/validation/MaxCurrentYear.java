@@ -1,4 +1,4 @@
-package com.netflix.api.validation;
+package com.netflix.apidata.validation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
