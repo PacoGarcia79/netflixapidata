@@ -21,8 +21,7 @@ public class Category {
 	@NotEmpty
 	private String name;
 	
-	@ManyToMany
-	Set<Title> titleId;
+
 	
 	
 	
@@ -34,17 +33,6 @@ public class Category {
 		super();
 		this.name = name;
 	}
-
-	public Set<Title> getTitleId() {
-		return titleId;
-	}
-
-
-
-	public void setTitleId(Set<Title> titleId) {
-		this.titleId = titleId;
-	}
-
 
 
 	public Long getId() {
