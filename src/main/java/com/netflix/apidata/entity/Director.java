@@ -25,7 +25,7 @@ public class Director{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 
 
 	@NotEmpty
@@ -43,13 +43,13 @@ public class Director{
 		this.name = name;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
 
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

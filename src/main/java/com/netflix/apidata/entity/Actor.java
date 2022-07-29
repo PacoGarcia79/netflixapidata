@@ -7,63 +7,43 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "actor")
-public class Actor{
+public class Actor {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-
+	private Long id;
 
 	@NotEmpty
 	private String name;
 
-
-
 	public Actor() {
 		super();
 	}
-
-
 
 	public Actor(@NotEmpty String name) {
 		super();
 		this.name = name;
 	}
 
-
-
-
-
-
-
-
-
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-
-
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-
-
-	public String getName(){
+	public String getName() {
 		return name;
 	}
 
-	public void setName(String name){
-		this.name=name;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-
 
 	@Override
 	public String toString() {
 		return "Actor [id=" + id + ", name=" + name + "]";
 	}
-
 
 }

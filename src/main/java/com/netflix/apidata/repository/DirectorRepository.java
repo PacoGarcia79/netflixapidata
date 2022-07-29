@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import com.netflix.apidata.entity.Director;
 
 @RepositoryRestResource(collectionResourceRel = "director", path = "director")
-public interface DirectorRepository  extends PagingAndSortingRepository<Director, Long>{
+public interface DirectorRepository extends PagingAndSortingRepository<Director, Long> {
 
 	List<Director> findByName(@Param("name") String name);
 }
