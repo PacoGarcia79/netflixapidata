@@ -19,7 +19,6 @@ public class Title {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	//private String id;
 	private Long id;
 	@NotBlank(message = "Name is mandatory")
 	private String name;
