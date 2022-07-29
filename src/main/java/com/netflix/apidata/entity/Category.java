@@ -35,15 +35,15 @@ public class Category {
 		this.name = name;
 	}
 
-//	public Set<Title> getTitleId() {
-//		return titleId;
-//	}
-//
-//
-//
-//	public void setTitleId(Set<Title> titleId) {
-//		this.titleId = titleId;
-//	}
+	public Set<Title> getTitleId() {
+		return titleId;
+	}
+
+
+
+	public void setTitleId(Set<Title> titleId) {
+		this.titleId = titleId;
+	}
 
 
 

@@ -2,33 +2,28 @@ package com.netflix.apidata.entity;
 
 import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
+@Table(name = "actor")
 public class Actor{
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 
 	@NotEmpty
-    private String name;
-    
-	@ManyToMany
-	Set<Title> titleId;
-	
-    public Actor() {
+	private String name;
+
+
+
+	public Actor() {
 		super();
 	}
-    
-    
+
+
 
 	public Actor(@NotEmpty String name) {
 		super();
@@ -37,15 +32,9 @@ public class Actor{
 
 
 
-//	public Set<Title> getTitleId() {
-//		return titleId;
-//	}
-//
-//
-//
-//	public void setTitleId(Set<Title> titleId) {
-//		this.titleId = titleId;
-//	}
+
+
+
 
 
 
@@ -62,19 +51,19 @@ public class Actor{
 
 
 	public String getName(){
-        return name;
-    }
+		return name;
+	}
 
-    public void setName(String name){
-        this.name=name;
-    }
+	public void setName(String name){
+		this.name=name;
+	}
 
 
 
-//	@Override
-//	public String toString() {
-//		return "Actor [id=" + id + ", name=" + name + ", titleId=" + titleId + "]";
-//	}
-    
-    
+	@Override
+	public String toString() {
+		return "Actor [id=" + id + ", name=" + name + "]";
+	}
+
+
 }

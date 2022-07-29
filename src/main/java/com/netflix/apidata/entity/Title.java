@@ -1,5 +1,7 @@
 package com.netflix.apidata.entity;
 
+import com.netflix.api.validation.MaxCurrentYear;
+
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -7,6 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Title {
@@ -14,30 +20,31 @@ public class Title {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id;
+	@NotBlank(message = "Name is mandatory")
 	private String name;
 	private String date_added;
+
+	@NotBlank(message = "Year is mandatory")
+	@Min(1900)
+	@MaxCurrentYear
 	private String release_year;
+
+	@NotNull(message = "Number of reviews is mandatory")
+	@Min(0)
+	@Max(10)
 	private String rating;
 	private String duration;
 	private String description;
 	private double user_rating;
 
-	@ManyToMany
-	Set<Actor> actor;
 
-	@ManyToMany
-	Set<Director> director;
-
-	@ManyToMany
-	Set<Category> category;
 
 	public Title() {
 		super();
 	}
 
 	public Title(String id, String name, String date_added, String release_year, String rating, String duration,
-				 String description, double user_rating, Set<Actor> actorId, Set<Director> directorId,
-				 Set<Category> categoryId) {
+				 String description, double user_rating) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -47,44 +54,21 @@ public class Title {
 		this.duration = duration;
 		this.description = description;
 		this.user_rating = user_rating;
-		this.actor = actorId;
-		this.director = directorId;
-		this.category = categoryId;
+
 	}
 
 
 
-	public Set<Actor> getActorId() {
-		return actor;
-	}
-
-	public void setActorId(Set<Actor> actorId) {
-		this.actor = actorId;
-	}
 
 
 
-	public Set<Director> getDirectorId() {
-		return director;
-	}
 
 
 
-	public void setDirectorId(Set<Director> directorId) {
-		this.director = directorId;
-	}
 
 
 
-	public Set<Category> getCategoryId() {
-		return category;
-	}
 
-
-
-	public void setCategoryId(Set<Category> categoryId) {
-		this.category = categoryId;
-	}
 
 
 
@@ -156,7 +140,7 @@ public class Title {
 	public String toString() {
 		return "Title [id=" + id + ", name=" + name + ", date_added=" + date_added + ", release_year=" + release_year
 				+ ", rating=" + rating + ", duration=" + duration + ", description=" + description + ", user_rating="
-				+ user_rating + ", actorId=" + actor + ", directorId=" + director + ", categoryId=" + category
+				+ user_rating
 				+ "]";
 	}
 	
