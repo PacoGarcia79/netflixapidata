@@ -19,7 +19,8 @@ public class Title {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
+	//private String id;
+	private Long id;
 	@NotBlank(message = "Name is mandatory")
 	private String name;
 	private String date_added;
@@ -51,7 +52,20 @@ public class Title {
 		super();
 	}
 
-	public Title(String id, String name, String date_added, String releaseYear, String rating, String duration,
+//	public Title(String id, String name, String date_added, String releaseYear, String rating, String duration,
+//			String description, double user_rating) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.date_added = date_added;
+//		this.releaseYear = releaseYear;
+//		this.rating = rating;
+//		this.duration = duration;
+//		this.description = description;
+//		this.user_rating = user_rating;
+//
+//	}
+	public Title(Long id, String name, String date_added, String releaseYear, String rating, String duration,
 			String description, double user_rating) {
 		super();
 		this.id = id;
@@ -65,11 +79,19 @@ public class Title {
 
 	}
 
-	public String getId() {
+//	public String getId() {
+//		return id;
+//	}
+//
+//	public void setId(String id) {
+//		this.id = id;
+//	}
+	
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
